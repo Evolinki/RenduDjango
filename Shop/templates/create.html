@@ -1,0 +1,27 @@
+
+<div class="create">
+
+    <h3>Ajouter Nouveau Produit</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class='form'>
+            <label for="">Url de l'image</label>
+            <input type="text" name="Url_Image" class="formc">
+        </div>    
+        <div class='form'>
+            <label for="">Nom</label>
+            <input type="text" name="Nom" class="formc">
+        </div>
+        <div class='form'>
+            <label for="">stock</label>
+            <input type="int" name="stock" class="formc">
+        </div>
+        <div class='form'>
+            <label for="">prix</label>
+            <input type="int" name="prix" class="formc">
+        </div>
+        <div class='form'>
+            <button type="submit">Ajouter</button>
+            <a href="{% url 'Shop:index' %}">Retourner aux produits</a>
+        </div>
+    </form>

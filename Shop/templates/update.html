@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'background.css' %}">
+<div class="create">
+
+    <h3>Modification</h3>
+    <form action="update/{{product.id}}" method="POST">
+        {% csrf_token %}
+        <div class='form'>
+            <label for="">Url de l'image</label>
+            <input type="text" name="Url_Image" value="{{Product.Url_Image}}" class="formc">
+        </div>    
+        <div class='form'>
+            <label for="">Nom</label>
+            <input type="text" name="Nom" value="{{Product.Nom}}" class="formc">
+        </div>
+        <div class='form'>
+            <label for="">stock</label>
+            <input type="int" name="stock" value="{{Product.stock}}" class="formc">
+        </div>
+        <div class='form'>
+            <label for="">prix</label>
+            <input type="int" name="prix" value="{{Product.prix}}" class="formc">
+        </div>
+        <div class='form'>
+            <button type="submit">Ajouter</button>
+        </div>
+    </form>
