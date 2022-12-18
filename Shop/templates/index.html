@@ -1,5 +1,7 @@
 
 <html>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
 <header>
 </header>
 
@@ -8,7 +10,7 @@
 <div class="main">
 
     {% for data in dataset %}.
-    
+    <br/>
     <img src={{data.Url_Image}} style="width : 50px">
     {{ data.Nom }}<br/>
     {{ data.stock }}<a> en stock</a>

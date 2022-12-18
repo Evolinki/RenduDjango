@@ -1,4 +1,7 @@
-
+<html>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+<body>
 <div class="create">
 
     <h3>Ajouter Nouveau Produit</h3>
@@ -25,3 +28,5 @@
             <a href="{% url 'Shop:index' %}">Retourner aux produits</a>
         </div>
     </form>
+</body>
+</html>

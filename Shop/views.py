@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Product
 from .forms import ProductForm
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 
 # Create your views here.
 #def index(request):
@@ -29,7 +30,7 @@ def create(request):
     form = ProductForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect('index')
+        return HttpResponseRedirect('/')
     return render(request, "create.html", {'form': form})
      
 
@@ -41,8 +42,8 @@ def update(request, id):
         return HttpResponseRedirect('/')
     return render(request, "update.html", {'product': product})
 
-def delete(request, id):
+def delete(id):
     form = Product.objects.get(id = id)
     form.delete()
-    return HttpResponseRedirect('/')
+    return redirect('/')
     
